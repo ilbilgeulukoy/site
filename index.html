@@ -1140,6 +1140,105 @@ Merci.`);
   @keyframes alpagaHeart{from{opacity:.5; transform:translateY(4px) scale(.75)}to{opacity:1; transform:translateY(-3px) scale(1.08)}}
   @keyframes woolFloat{0%{opacity:0; transform:translate(var(--x0),var(--y0)) scale(.5) rotate(0deg)}15%{opacity:1}100%{opacity:0; transform:translate(calc(var(--x0) + var(--dx)),calc(var(--y0) + var(--dy))) scale(1.15) rotate(var(--spin))}}
   @media(max-width:700px){.cc-egg-toast{top:14px; max-width:90vw; text-align:center}.dino-wrap{transform:scale(.78) rotate(var(--rot,0deg)); transform-origin:center}.alpaga-pop{scale:.82}.wool-confetti{font-size:18px}}
+
+
+/* ─── FINAL MOBILE FIX: hero yazıları ve stats kaymasın ─── */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto !important;
+    padding-top: 145px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 22px 56px 22px !important;
+  }
+
+  .hero-eyebrow {
+    max-width: 100% !important;
+  }
+
+  .hero-eyebrow span {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(50px, 17vw, 76px) !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  .hero-desc {
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+  }
+
+  .hero-btns {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .hero-btns .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-stats {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+
+    margin-top: 34px !important;
+    overflow: hidden !important;
+  }
+
+  .stat {
+    min-width: 0 !important;
+    width: auto !important;
+  }
+
+  .stat-n {
+    font-size: 34px !important;
+    white-space: nowrap !important;
+  }
+
+  .stat-l {
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    letter-spacing: .1em !important;
+  }
+
+  .hero-watermark {
+    right: -35% !important;
+    width: 95vw !important;
+    max-width: none !important;
+  }
+}
+
 </style>
 <script>
 (function(){
