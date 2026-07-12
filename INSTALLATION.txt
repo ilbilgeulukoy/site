@@ -1,0 +1,16 @@
+Fichiers à placer à la racine du site :
+- index.html
+- merci.html
+- favicon.png
+- favicon.ico
+- apple-touch-icon.png
+- robots.txt
+- sitemap.xml
+
+Premier test FormSubmit :
+1. Envoyer une demande depuis le site publié.
+2. Ouvrir climconcept@outlook.com.
+3. Cliquer une seule fois sur le lien d’activation FormSubmit.
+4. Envoyer une deuxième demande de test.
+
+Search Console : la balise ou le fichier de validation ne peut être ajouté qu’après que Google a fourni le code unique.

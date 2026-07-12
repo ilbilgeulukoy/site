@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://climconcept67.fr/sitemap.xml
