@@ -821,6 +821,7 @@ a,button,.svc,.wp,.cert,.rev,.g-item,.faq-q,.choice-card,.smart-chip,.fsub,.g-fi
     <form class="form smart-form" id="smart-form" action="https://formsubmit.co/climconcept@outlook.com" method="POST">
       <input type="hidden" name="_subject" value="Nouvelle demande de devis — Clim Concept">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_next" value="https://climconcept67.fr/merci.html">
       <input type="hidden" name="_autoresponse" value="Votre demande a bien été reçue. Clim Concept vous répondra dans les meilleurs délais. Pensez à vérifier votre dossier de courriers indésirables si vous ne recevez pas de réponse.">
       <input type="hidden" id="sf-delay" name="Délai souhaité" value="Dès que possible">
@@ -1030,15 +1031,20 @@ document.querySelectorAll('.c-dot').forEach(dot => {
   });
 });
 
-// ── FORM SUBMIT ────────────────────────────────────────────────────────────
-document.querySelector('.fsub').addEventListener('click', function() {
-  const sp = this.querySelector('span');
-  sp.textContent = lang === 'fr' ? 'Envoyé ✓' : 'Sent ✓';
-  this.style.background = '#1a7a45';
-  setTimeout(() => {
-    sp.textContent = lang === 'fr' ? 'Envoyer ma demande' : 'Send my request';
-    this.style.background = '';
-  }, 3000);
+// ── FORM VALIDATION ────────────────────────────────────────────────────────
+const contactForm = document.getElementById('smart-form');
+const submitButton = contactForm.querySelector('.fsub');
+const submitLabel = submitButton.querySelector('span');
+
+contactForm.addEventListener('submit', function(event) {
+  if (!contactForm.checkValidity()) {
+    event.preventDefault();
+    contactForm.reportValidity();
+    return;
+  }
+
+  submitButton.disabled = true;
+  submitLabel.textContent = lang === 'fr' ? 'Envoi en cours…' : 'Sending…';
 });
 
 // ── SMOOTH PARALLAX HERO ──────────────────────────────────────────────────
